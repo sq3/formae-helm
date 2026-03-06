@@ -41,6 +41,8 @@ See [`examples/quickstart-monitoring.yaml`](examples/quickstart-monitoring.yaml)
 | `formae.datastore.type` | Backend type: `postgres`, `sqlite`, `auroradataapi` | `postgres` |
 | `formae.datastore.sqlite.filePath` | SQLite database path | `/data/formae.db` |
 | `formae.datastore.postgres.host` | External PostgreSQL host (when `postgresql.enabled=false`) | `""` |
+| `formae.datastore.postgres.existingSecret` | Name of an existing Secret containing the database password (external DB) | `""` |
+| `formae.datastore.postgres.existingSecretKey` | Key within the existing Secret that holds the password | `password` |
 | `formae.datastore.auroraDataAPI.clusterARN` | Aurora cluster ARN | `""` |
 
 ### PostgreSQL (in-cluster)

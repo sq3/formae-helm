@@ -1,9 +1,15 @@
 # formae agent + external PostgreSQL (RDS, Cloud SQL, etc.)
 #
-# Usage:
+# Option A – password via --set:
 #   helm install formae . -f examples/formae-external-db.yaml \
 #     --set formae.datastore.postgres.host=mydb.example.com \
 #     --set formae.datastore.postgres.password=<your-password>
+#
+# Option B – password via existing Kubernetes Secret:
+#   helm install formae . -f examples/formae-external-db.yaml \
+#     --set formae.datastore.postgres.host=mydb.example.com \
+#     --set formae.datastore.postgres.existingSecret=my-postgres-secret \
+#     --set formae.datastore.postgres.existingSecretKey=password
 #
 # Deploys: formae agent only (connects to external database)
 # Good for: Production with managed database service
@@ -21,7 +27,7 @@ formae:
       # password: set via --set or use existingSecret
       database: formae
       schema: public
-      # existingSecret: my-db-secret
+      # existingSecret: my-postgres-secret
       # existingSecretKey: password
 
 grafana:
