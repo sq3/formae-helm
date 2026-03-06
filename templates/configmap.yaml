@@ -24,6 +24,9 @@ data:
         {{- if .Values.formae.server.observerPort }}
         observerPort = {{ .Values.formae.server.observerPort }}
         {{- end }}
+        {{- if .Values.formae.server.secret.existingSecret }}
+        secret = read("env:FORMAE_AUTH_TOKEN")
+        {{- end }}
       }
 
       datastore {
