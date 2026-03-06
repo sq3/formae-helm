@@ -56,6 +56,13 @@ See [`examples/quickstart-monitoring.yaml`](examples/quickstart-monitoring.yaml)
 | `postgresql.persistence.enabled` | Enable persistent storage | `true` |
 | `postgresql.persistence.size` | PVC size | `8Gi` |
 
+### Server Auth
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `formae.server.secret.existingSecret` | Name of a Kubernetes Secret containing the server auth token | `""` |
+| `formae.server.secret.existingSecretKey` | Key within the Secret that holds the token | `token` |
+
 ### Observability
 
 | Parameter | Description | Default |

@@ -55,6 +55,13 @@ spec:
                   name: {{ include "formae.postgres.secretName" . }}
                   key: {{ include "formae.postgres.secretKey" . }}
             {{- end }}
+            {{- if .Values.formae.server.secret.existingSecret }}
+            - name: FORMAE_AUTH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.formae.server.secret.existingSecret }}
+                  key: {{ .Values.formae.server.secret.existingSecretKey }}
+            {{- end }}
             {{- if .Values.formae.otel.enabled }}
             - name: FORMAE_OTEL_ENABLED
               value: "true"
