@@ -67,6 +67,10 @@ formae:
     ergoPort: 0
     registrarPort: 0
     observerPort: 0
+    ## Auth secret — references a Kubernetes Secret containing the server token
+    secret:
+      existingSecret: ""
+      existingSecretKey: token
     ## TLS configuration
     tls:
       enabled: false
