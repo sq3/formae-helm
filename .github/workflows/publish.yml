@@ -5,6 +5,7 @@ on:
     branches: ['*']
     paths:
       - Chart.yaml
+  workflow_dispatch:
 
 jobs:
   publish:
