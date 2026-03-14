@@ -2,7 +2,7 @@ name: Publish Helm chart to GHCR
 
 on:
   push:
-    branches: ['*']
+    branches: ['main']
     paths:
       - Chart.yaml
   workflow_dispatch:
